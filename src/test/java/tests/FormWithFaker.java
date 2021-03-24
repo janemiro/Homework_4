@@ -6,21 +6,19 @@ import com.github.javafaker.service.RandomService;
 import org.junit.jupiter.api.Test;
 
 import java.util.Locale;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static utils.RandomUtils.getRandomString;
+
 
 public class FormWithFaker {
-    Faker faker = new Faker;
+    Faker faker = new Faker();
     FakeValuesService fakeValuesService = new FakeValuesService(
             new Locale("en-GB"), new RandomService());
 
     String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
-            email = fakeValuesService.bothify("????##@gmail.com"),
-            userEmail = "dusya@gmail.com",
+            userEmail = fakeValuesService.bothify("????##@gmail.com"),
             gender = "Other",
             userNumber = "1234567890",
             dayOfBirth = "03",
@@ -35,7 +33,7 @@ public class FormWithFaker {
             city = "Panipat",
             picture = "1.png";
 
-
+    @Test
     public void FormTest() {
         open("https://demoqa.com/automation-practice-form");
 

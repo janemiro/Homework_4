@@ -28,7 +28,7 @@ public class FileUtils {
         try {
             file.getParentFile().mkdirs();
             file.createNewFile();
-            PrintWriter writer = new PrintWriter(file, StandardCharsets.UTF_8);
+            PrintWriter writer = new PrintWriter(file, String.valueOf(StandardCharsets.UTF_8));
             writer.write(content);
             writer.flush();
             writer.close();
