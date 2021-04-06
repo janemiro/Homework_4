@@ -34,7 +34,7 @@ public class FormWithFaker {
             picture = "1.png";
 
     @Test
-    public void FormTest() {
+    public void formTest() {
         open("https://demoqa.com/automation-practice-form");
         
         $("#firstName").val(firstName);
